@@ -1,0 +1,27 @@
+Question 1:
+
+For the maxIndex function, it performs a linear search on a 1D array, therefore each value is checked once. Please refer to the comments within the code itself for the further broken down calculation of the time complexity.
+The first line has time complexity of 1.
+Let n = end-start+1 (i.e. the number of elements we are going to be checking in our "Shortened" array)
+The for loop has a time complexity of n * (steps within each loop) - There will be a maximum of 1 step in each loop (to update the value of max_index), therefore the for-loop has a complexity of n.
+Overall, the time complexity is 4n E O(n)
+Therefore, this algorithm runs in LINEAR time complexity - O(n)
+
+
+Question 3:
+
+For the matrixMaxValue function, it first initialises 4 integer values with a time complexity of 4 which is O(1) or constant time.
+Then it returns the output of the blockMaxValue by setting the "box" as the entirety of the matrix.
+The time complexity of the blockMaxValue function:
+-Let m=the width of the specified "Block" (Total number of columns)
+-Let n=the height of the specified "Block" (total number of rows)
+- There are some integer initialisations which are all O(1) or constant time complexity
+- The maxIndex function call is of complexity O(m)
+- We then recursively call the blockMaxValue function twice. Each of these calls divides the total number of rows by 2.
+- This means, we will recursively call log(n) times since we are halving each time (divide and conquer).
+- Therefore, the number of recursive calls is log(n)
+- At each recursion, we call the maxIndex function which is O(m).
+- Therefore, each call is O(m) and there are log(n) calls giving a complexity of O(m) * O(log(n)) = O(mlog(n))
+- OVERALL TIME COMPLEXITY = O(1) + (O(m) * O(log(n)))
+
+--> O(1) becomes negligible so the time complexity is simply O(m * log(n)) = O(mlog(n))

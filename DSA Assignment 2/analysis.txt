@@ -1,0 +1,11 @@
+Overview: The distance2 algorithm has a runtime complexity of n*(2^n) where n is the length of the input strings. Space complexity is O(2^n) -> Number of nodes
+
+We are performing a breadth-first search (BFS). This is a graph where each node is one of the binary strings and each edge connecting nodes represents an allowable transformation of that string.
+Hence, we are trying to find the shortest path from x to y and we do this by traversing the least number of levels and we do that via BFS.
+With strings of length n, at each step, there are n-2 triplets that could be checked for transformations.
+This gives us roughly 2^(n-2) nodes at each step which can be simplified to O(2^n) nodes.
+
+BFS runs in O(n) since each node can have up to O(n) neighbours to check.
+Therefore, overall time complexity is O(n) * O(2^n) = O(n * 2^n)
+
+Space complexity is just simply the number of nodes which is of order O(2^n)
