@@ -25,11 +25,12 @@ public class DoublyLinkedList{
             throw new RuntimeException("List is empty");
         }
 
-        listStart = listStart.next;
-        if (isEmpty()) {
+        if(listStart.next == null){ //If list is about to be emptied, clear listEnd item
             listEnd = null;
-        }else{
-            //If list isn't empty after removing the start item, update the new beginning item's prev attribute to point to null
+        }
+        listStart = listStart.next;
+
+        if(listStart != null){ //If list isn't empty after removing the start item, update the new beginning item's prev attribute to point to null
             listStart.prev=null;
         }
     }
@@ -45,6 +46,10 @@ public class DoublyLinkedList{
     public static void delete_end(){
         if (isEmpty()) {
             throw new RuntimeException("List is empty");
+        }
+
+        if(listEnd.prev == null){ //If list is about to be emptied, remove the first item too
+            listStart = null;
         }
 
         listEnd = listEnd.prev; //Update the new listEnd to be the 2nd last item
