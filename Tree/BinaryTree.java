@@ -1,4 +1,4 @@
-public class BinaryTree implements BaseTree{
+public class BinaryTree{
     public BinaryNode tree = null;
 
     public int[] flatten(){
